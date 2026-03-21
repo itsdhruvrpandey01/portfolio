@@ -4,53 +4,86 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dhruv Pandey | Backend Developer</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Inter', sans-serif;
       background: #0f172a;
       color: #e2e8f0;
+      scroll-behavior: smooth;
     }
+
     header {
-      padding: 40px;
+      padding: 60px 20px;
       text-align: center;
-      background: #020617;
+      background: linear-gradient(135deg, #020617, #020617);
     }
+
     h1 {
+      font-size: 3rem;
       margin: 0;
-      font-size: 2.5rem;
     }
-    p {
-      color: #94a3b8;
+
+    .typing {
+      color: #38bdf8;
+      font-weight: 600;
+      margin-top: 10px;
     }
+
     .container {
       padding: 40px;
       max-width: 1000px;
       margin: auto;
     }
+
     .section {
-      margin-bottom: 50px;
+      margin-bottom: 60px;
     }
+
     .card {
       background: #020617;
       padding: 20px;
-      border-radius: 12px;
+      border-radius: 16px;
       margin-top: 15px;
       transition: 0.3s;
+      border: 1px solid rgba(255,255,255,0.05);
     }
+
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
     }
+
     a {
       color: #38bdf8;
       text-decoration: none;
     }
+
     .links a {
       display: inline-block;
       margin-right: 15px;
       margin-top: 10px;
     }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat h3 {
+      margin: 0;
+      font-size: 2rem;
+      color: #38bdf8;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
@@ -63,7 +96,7 @@
 
 <header>
   <h1>Dhruv Pandey</h1>
-  <p>Backend Developer | System Design Learner | Problem Solver</p>
+  <div class="typing" id="typing"></div>
 </header>
 
 <div class="container">
@@ -72,16 +105,49 @@
     <h2>About Me</h2>
     <div class="card">
       <p>
-        I'm a backend-focused developer passionate about building scalable systems and improving problem-solving skills. 
-        Currently diving deep into system design concepts like caching, messaging queues, and distributed systems.
+        Backend developer focused on building scalable systems and understanding distributed architectures. 
+        Currently exploring Kafka, caching strategies, and system design to build production-level systems.
       </p>
     </div>
   </div>
 
   <div class="section">
-    <h2>Skills</h2>
-    <div class="card">
-      <p>Java, Spring Boot, SQL, REST APIs, System Design Basics, Kafka, Redis</p>
+    <h2>Tech Stack</h2>
+    <div class="grid">
+      <div class="card">Java</div>
+      <div class="card">Spring Boot</div>
+      <div class="card">SQL</div>
+      <div class="card">Kafka</div>
+      <div class="card">Redis</div>
+      <div class="card">REST APIs</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>What I Do</h2>
+    <div class="grid">
+      <div class="card">Design scalable backend systems</div>
+      <div class="card">Optimize database queries</div>
+      <div class="card">Work with messaging systems (Kafka)</div>
+      <div class="card">Build REST APIs</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Stats</h2>
+    <div class="grid">
+      <div class="card stat">
+        <h3>100+</h3>
+        <p>DSA Problems</p>
+      </div>
+      <div class="card stat">
+        <h3>10+</h3>
+        <p>Backend APIs Built</p>
+      </div>
+      <div class="card stat">
+        <h3>1+</h3>
+        <p>Year Experience</p>
+      </div>
     </div>
   </div>
 
@@ -107,6 +173,36 @@
 <footer>
   <p>© 2026 Dhruv Pandey</p>
 </footer>
+
+<script>
+  const texts = [
+    "Backend Developer",
+    "System Design Learner",
+    "Kafka & Distributed Systems",
+    "Problem Solver"
+  ];
+
+  let count = 0;
+  let index = 0;
+  let currentText = '';
+  let letter = '';
+
+  (function type() {
+    if (count === texts.length) count = 0;
+    currentText = texts[count];
+    letter = currentText.slice(0, ++index);
+
+    document.getElementById('typing').textContent = letter;
+
+    if (letter.length === currentText.length) {
+      count++;
+      index = 0;
+      setTimeout(type, 1000);
+    } else {
+      setTimeout(type, 100);
+    }
+  })();
+</script>
 
 </body>
 </html>
