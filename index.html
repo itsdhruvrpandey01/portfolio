@@ -1,208 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dhruv Pandey | Backend Developer</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#38bdf8' },
+          boxShadow: { glow: '0 0 30px rgba(56,189,248,0.4)' }
+        }
+      }
+    }
+  </script>
 
   <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
-      scroll-behavior: smooth;
-    }
-
-    header {
-      padding: 60px 20px;
-      text-align: center;
-      background: linear-gradient(135deg, #020617, #020617);
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin: 0;
-    }
-
-    .typing {
-      color: #38bdf8;
-      font-weight: 600;
-      margin-top: 10px;
-    }
-
-    .container {
-      padding: 40px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .section {
-      margin-bottom: 60px;
-    }
-
-    .card {
-      background: #020617;
-      padding: 20px;
-      border-radius: 16px;
-      margin-top: 15px;
-      transition: 0.3s;
-      border: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    }
-
-    a {
-      color: #38bdf8;
-      text-decoration: none;
-    }
-
-    .links a {
-      display: inline-block;
-      margin-right: 15px;
-      margin-top: 10px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .stat {
-      text-align: center;
-    }
-
-    .stat h3 {
-      margin: 0;
-      font-size: 2rem;
-      color: #38bdf8;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #020617;
-      color: #64748b;
+    .glass { backdrop-filter: blur(10px); background: rgba(2,6,23,0.6); }
+    .glow:hover { box-shadow: 0 0 40px rgba(56,189,248,0.6); }
+    .gradient-text {
+      background: linear-gradient(90deg,#38bdf8,#22c55e,#a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   </style>
 </head>
-<body>
 
-<header>
-  <h1>Dhruv Pandey</h1>
-  <div class="typing" id="typing"></div>
-</header>
+<body class="bg-slate-950 text-white font-sans">
 
-<div class="container">
+<!-- HERO -->
+<section class="text-center py-24 px-4">
+  <h1 class="text-4xl md:text-6xl font-bold gradient-text">
+    I Build Scalable Backends ⚡
+  </h1>
 
-  <div class="section">
-    <h2>About Me</h2>
-    <div class="card">
-      <p>
-        Backend developer focused on building scalable systems and understanding distributed architectures. 
-        Currently exploring Kafka, caching strategies, and system design to build production-level systems.
+  <p class="mt-6 text-lg text-gray-400 max-w-2xl mx-auto">
+    API Integrations • Workflow Automation • Debugging • Performance Optimization
+  </p>
+
+  <div class="mt-8 flex justify-center gap-4 flex-wrap">
+    <a href="mailto:dhruvrpandey01@gmail.com" 
+       class="bg-primary text-black px-6 py-3 rounded-lg font-semibold hover:scale-110 transition shadow-glow">
+       Hire Me
+    </a>
+
+    <a href="https://wa.me/918169955621" 
+       class="border border-gray-600 px-6 py-3 rounded-lg hover:bg-gray-800 transition">
+       WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="py-16 px-6 max-w-4xl mx-auto text-center">
+  <h2 class="text-3xl font-bold mb-6">About Me</h2>
+
+  <p class="text-gray-400 leading-relaxed">
+    I'm a backend developer specializing in API integrations, workflow automation, and system optimization.
+    I’ve worked on real-world systems like KYC verification pipelines, AI-based document processing,
+    and performance-critical backend services.
+  </p>
+
+  <p class="text-gray-400 mt-4">
+    Currently working at Aurionpro on backend systems supporting workflows worth ₹5L+ monthly,
+    focusing on scalability, reliability, and automation.
+  </p>
+</section>
+
+<!-- SERVICES -->
+<section class="py-16 px-6 max-w-6xl mx-auto">
+  <h2 class="text-3xl font-bold mb-10 text-center">What I Can Do</h2>
+
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="glass p-6 rounded-xl glow">⚡ Scalable REST APIs</div>
+    <div class="glass p-6 rounded-xl glow">🔗 API Integrations</div>
+    <div class="glass p-6 rounded-xl glow">🤖 AI Automation</div>
+    <div class="glass p-6 rounded-xl glow">🚀 Performance Optimization</div>
+    <div class="glass p-6 rounded-xl glow">🐞 Debugging</div>
+    <div class="glass p-6 rounded-xl glow">📡 Kafka Systems</div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="py-16 px-6 bg-slate-900">
+  <h2 class="text-3xl font-bold mb-10 text-center">Featured Work</h2>
+
+  <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+
+    <div class="glass p-6 rounded-xl glow">
+      <h3 class="text-xl font-semibold">KYC Automation System</h3>
+      <p class="text-gray-400 mt-2">
+        Architected a full KYC pipeline integrating 6–7 APIs (Aadhaar, PAN, Passport, etc.)
+        with retry mechanisms and validation layers.
       </p>
+      <p class="mt-3 text-sm text-primary">~70% manual effort reduced</p>
+    </div>
+
+    <div class="glass p-6 rounded-xl glow">
+      <h3 class="text-xl font-semibold">AI Document Masking</h3>
+      <p class="text-gray-400 mt-2">
+        Built workflow to detect and mask sensitive data using AI APIs.
+      </p>
+      <p class="mt-3 text-sm text-primary">+60% automation</p>
+    </div>
+
+    <div class="glass p-6 rounded-xl glow">
+      <h3 class="text-xl font-semibold">Workflow Optimization</h3>
+      <p class="text-gray-400 mt-2">
+        Reduced API latency and optimized backend processes.
+      </p>
+      <p class="mt-3 text-sm text-primary">-40% response time</p>
+    </div>
+
+    <div class="glass p-6 rounded-xl glow">
+      <h3 class="text-xl font-semibold">URL Shortener</h3>
+      <p class="text-gray-400 mt-2">
+        Built scalable URL shortener with efficient ID generation and redirection.
+      </p>
+      <p class="mt-3 text-sm text-primary">Low latency & scalable design</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- METRICS -->
+<section class="py-16 px-6 text-center">
+  <h2 class="text-3xl font-bold mb-10">Impact</h2>
+
+  <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+    <div class="glass p-6 rounded-xl glow">
+      <h3 class="text-3xl text-primary font-bold">40%+</h3>
+      <p>Faster APIs</p>
+    </div>
+
+    <div class="glass p-6 rounded-xl glow">
+      <h3 class="text-3xl text-primary font-bold">60%+</h3>
+      <p>Automation</p>
+    </div>
+
+    <div class="glass p-6 rounded-xl glow">
+      <h3 class="text-3xl text-primary font-bold">10k+</h3>
+      <p>Requests handled</p>
     </div>
   </div>
+</section>
 
-  <div class="section">
-    <h2>Tech Stack</h2>
-    <div class="grid">
-      <div class="card">Java</div>
-      <div class="card">Spring Boot</div>
-      <div class="card">SQL</div>
-      <div class="card">Kafka</div>
-      <div class="card">Redis</div>
-      <div class="card">REST APIs</div>
-    </div>
-  </div>
+<!-- CTA -->
+<section class="text-center py-20">
+  <h2 class="text-3xl font-bold gradient-text">
+    Let’s Build Something Scalable
+  </h2>
 
-  <div class="section">
-    <h2>What I Do</h2>
-    <div class="grid">
-      <div class="card">Design scalable backend systems</div>
-      <div class="card">Optimize database queries</div>
-      <div class="card">Work with messaging systems (Kafka)</div>
-      <div class="card">Build REST APIs</div>
-    </div>
-  </div>
+  <a href="mailto:dhruvrpandey01@gmail.com" 
+     class="mt-6 inline-block bg-primary text-black px-8 py-4 rounded-lg font-semibold hover:scale-110 transition shadow-glow">
+     Hire Me Now
+  </a>
+</section>
 
-  <div class="section">
-    <h2>Stats</h2>
-    <div class="grid">
-      <div class="card stat">
-        <h3>100+</h3>
-        <p>DSA Problems</p>
-      </div>
-      <div class="card stat">
-        <h3>10+</h3>
-        <p>Backend APIs Built</p>
-      </div>
-      <div class="card stat">
-        <h3>1+</h3>
-        <p>Year Experience</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Profiles</h2>
-    <div class="card links">
-      <a href="https://leetcode.com/u/dhruvrpandey01/" target="_blank">LeetCode</a>
-      <a href="https://github.com/itsdhruvrpandey01" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/dhruv-pandey-102719235/" target="_blank">LinkedIn</a>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Contact</h2>
-    <div class="card">
-      <p>Email: dhruvrpandey01@gmail.com</p>
-      <p>Phone: 8169955621</p>
-    </div>
-  </div>
-
-</div>
-
-<footer>
-  <p>© 2026 Dhruv Pandey</p>
-</footer>
-
-<script>
-  const texts = [
-    "Backend Developer",
-    "System Design Learner",
-    "Kafka & Distributed Systems",
-    "Problem Solver"
-  ];
-
-  let count = 0;
-  let index = 0;
-  let currentText = '';
-  let letter = '';
-
-  (function type() {
-    if (count === texts.length) count = 0;
-    currentText = texts[count];
-    letter = currentText.slice(0, ++index);
-
-    document.getElementById('typing').textContent = letter;
-
-    if (letter.length === currentText.length) {
-      count++;
-      index = 0;
-      setTimeout(type, 1000);
-    } else {
-      setTimeout(type, 100);
-    }
-  })();
-</script>
+<!-- FLOATING BUTTON -->
+<a href="https://wa.me/918169955621" 
+   class="fixed bottom-6 right-6 bg-green-500 px-5 py-3 rounded-full shadow-lg hover:scale-110 transition">
+   💬
+</a>
 
 </body>
 </html>
