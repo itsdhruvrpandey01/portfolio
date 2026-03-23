@@ -3,28 +3,96 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dhruv Pandey | Backend Developer</title>
+  <title>Dhruv Pandey | Backend Engineer</title>
 
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: { primary: '#38bdf8' },
-          boxShadow: { glow: '0 0 30px rgba(56,189,248,0.4)' }
-        }
-      }
-    }
-  </script>
 
   <style>
-    .glass { backdrop-filter: blur(10px); background: rgba(2,6,23,0.6); }
-    .glow:hover { box-shadow: 0 0 40px rgba(56,189,248,0.6); }
-    .gradient-text {
-      background: linear-gradient(90deg,#38bdf8,#22c55e,#a78bfa);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .card {
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(15,23,42,0.6);
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .skill-chip {
+      transition: all 0.2s ease;
+    }
+
+    .skill-chip:hover {
+      border-color: rgba(255,255,255,0.2);
+      background: rgba(30,41,59,0.8);
+    }
+
+    .node {
+      min-width: 110px;
+      text-align: center;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(30,41,59,0.6);
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .node:hover {
+      border-color: rgba(255,255,255,0.2);
+      background: rgba(30,41,59,0.9);
+    }
+
+    .node.active {
+      border-color: white;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .explain-box {
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(15,23,42,0.6);
+    }
+
+    .flow-container {
+      position: relative;
+      width: 100%;
+      max-width: 700px;
+    }
+
+    .flow-line {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      height: 2px;
+      background: rgba(255,255,255,0.08);
+      transform: translateY(-50%);
+    }
+
+    .flow-dot {
+      position: absolute;
+      top: 50%;
+      width: 8px;
+      height: 8px;
+      background: white;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      animation: moveFlow 4s linear infinite;
+    }
+
+    @keyframes moveFlow {
+      0% { left: 0%; opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { left: 100%; opacity: 0; }
     }
   </style>
 </head>
@@ -32,139 +100,142 @@
 <body class="bg-slate-950 text-white font-sans">
 
 <!-- HERO -->
-<section class="text-center py-24 px-4">
-  <h1 class="text-4xl md:text-6xl font-bold gradient-text">
-    I Build Scalable Backends ⚡
+<section class="py-24 px-6 max-w-5xl mx-auto fade-up">
+  <h1 class="text-4xl md:text-5xl font-semibold">
+    Backend Engineer building reliable systems
   </h1>
 
-  <p class="mt-6 text-lg text-gray-400 max-w-2xl mx-auto">
-    API Integrations • Workflow Automation • Debugging • Performance Optimization
+  <p class="mt-6 text-gray-400 max-w-2xl">
+    I design backend systems focused on scalability, API orchestration,
+    and performance optimization.
   </p>
-
-  <div class="mt-8 flex justify-center gap-4 flex-wrap">
-    <a href="mailto:dhruvrpandey01@gmail.com" 
-       class="bg-primary text-black px-6 py-3 rounded-lg font-semibold hover:scale-110 transition shadow-glow">
-       Hire Me
-    </a>
-
-    <a href="https://wa.me/918169955621" 
-       class="border border-gray-600 px-6 py-3 rounded-lg hover:bg-gray-800 transition">
-       WhatsApp
-    </a>
-  </div>
 </section>
 
 <!-- ABOUT -->
-<section class="py-16 px-6 max-w-4xl mx-auto text-center">
-  <h2 class="text-3xl font-bold mb-6">About Me</h2>
-
-  <p class="text-gray-400 leading-relaxed">
-    I'm a backend developer specializing in API integrations, workflow automation, and system optimization.
-    I’ve worked on real-world systems like KYC verification pipelines, AI-based document processing,
-    and performance-critical backend services.
-  </p>
-
-  <p class="text-gray-400 mt-4">
-    Currently working at Aurionpro on backend systems supporting workflows worth ₹5L+ monthly,
-    focusing on scalability, reliability, and automation.
+<section class="py-16 px-6 max-w-5xl mx-auto fade-up">
+  <h2 class="text-xl font-semibold mb-4">About</h2>
+  <p class="text-gray-400">
+    Backend Engineer at Aurionpro working on high-volume workflows (~₹10L+/month).
   </p>
 </section>
 
-<!-- SERVICES -->
-<section class="py-16 px-6 max-w-6xl mx-auto">
-  <h2 class="text-3xl font-bold mb-10 text-center">What I Can Do</h2>
+<!-- EXPERTISE -->
+<section class="py-16 px-6 max-w-5xl mx-auto fade-up">
+  <h2 class="text-xl font-semibold mb-6">Expertise</h2>
 
-  <div class="grid md:grid-cols-3 gap-6">
-    <div class="glass p-6 rounded-xl glow">⚡ Scalable REST APIs</div>
-    <div class="glass p-6 rounded-xl glow">🔗 API Integrations</div>
-    <div class="glass p-6 rounded-xl glow">🤖 AI Automation</div>
-    <div class="glass p-6 rounded-xl glow">🚀 Performance Optimization</div>
-    <div class="glass p-6 rounded-xl glow">🐞 Debugging</div>
-    <div class="glass p-6 rounded-xl glow">📡 Kafka Systems</div>
+  <div class="flex flex-wrap gap-3 text-sm text-gray-300">
+    <span class="skill-chip px-3 py-1 border border-gray-800 rounded-md">REST APIs</span>
+    <span class="skill-chip px-3 py-1 border border-gray-800 rounded-md">API Integration</span>
+    <span class="skill-chip px-3 py-1 border border-gray-800 rounded-md">Kafka</span>
+    <span class="skill-chip px-3 py-1 border border-gray-800 rounded-md">Performance</span>
+    <span class="skill-chip px-3 py-1 border border-gray-800 rounded-md">Fault Tolerance</span>
   </div>
 </section>
 
 <!-- PROJECTS -->
-<section class="py-16 px-6 bg-slate-900">
-  <h2 class="text-3xl font-bold mb-10 text-center">Featured Work</h2>
+<section class="py-16 px-6 max-w-5xl mx-auto fade-up">
+  <h2 class="text-xl font-semibold mb-8">Work</h2>
 
-  <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-
-    <div class="glass p-6 rounded-xl glow">
-      <h3 class="text-xl font-semibold">KYC Automation System</h3>
-      <p class="text-gray-400 mt-2">
-        Architected a full KYC pipeline integrating 6–7 APIs (Aadhaar, PAN, Passport, etc.)
-        with retry mechanisms and validation layers.
-      </p>
-      <p class="mt-3 text-sm text-primary">~70% manual effort reduced</p>
+  <div class="space-y-6">
+    <div class="card p-6 rounded-lg">
+      <h3 class="font-semibold">KYC Verification Pipeline</h3>
+      <p class="text-gray-400">Integrated 6–7 APIs with retry logic.</p>
     </div>
 
-    <div class="glass p-6 rounded-xl glow">
-      <h3 class="text-xl font-semibold">AI Document Masking</h3>
-      <p class="text-gray-400 mt-2">
-        Built workflow to detect and mask sensitive data using AI APIs.
-      </p>
-      <p class="mt-3 text-sm text-primary">+60% automation</p>
+    <div class="card p-6 rounded-lg">
+      <h3 class="font-semibold">AI Document Processing</h3>
+      <p class="text-gray-400">Automated masking using AI APIs.</p>
     </div>
 
-    <div class="glass p-6 rounded-xl glow">
-      <h3 class="text-xl font-semibold">Workflow Optimization</h3>
-      <p class="text-gray-400 mt-2">
-        Reduced API latency and optimized backend processes.
-      </p>
-      <p class="mt-3 text-sm text-primary">-40% response time</p>
+    <div class="card p-6 rounded-lg">
+      <h3 class="font-semibold">Performance Optimization</h3>
+      <p class="text-gray-400">Improved API latency by ~40%.</p>
     </div>
 
-    <div class="glass p-6 rounded-xl glow">
-      <h3 class="text-xl font-semibold">URL Shortener</h3>
-      <p class="text-gray-400 mt-2">
-        Built scalable URL shortener with efficient ID generation and redirection.
-      </p>
-      <p class="mt-3 text-sm text-primary">Low latency & scalable design</p>
+    <div class="card p-6 rounded-lg">
+      <h3 class="font-semibold">URL Shortener</h3>
+      <p class="text-gray-400">Short URL system with collision handling.</p>
+      <a href="https://github.com/itsdhruvrpandey01/url-shortner"
+         class="text-sm underline text-gray-400">View Code →</a>
     </div>
+  </div>
+</section>
 
+<!-- SYSTEM DESIGN -->
+<section class="py-16 px-6 max-w-5xl mx-auto fade-up">
+  <h2 class="text-xl font-semibold mb-8">System Design</h2>
+
+  <div class="card p-6 rounded-lg">
+    <h3 class="font-semibold">URL Shortener Architecture</h3>
+
+    <div class="mt-10 flex flex-col items-center space-y-8">
+
+      <div class="flow-container">
+        <div class="flow-line"></div>
+        <div class="flow-dot"></div>
+
+        <div class="flex justify-between relative z-10">
+          <div class="node" data-info="User sends request">Client</div>
+          <div class="node" data-info="Handles API logic">API</div>
+          <div class="node" data-info="Generates short code">Generator</div>
+          <div class="node" data-info="Stores mapping">DB</div>
+        </div>
+      </div>
+
+      <div id="explainBox"
+           class="explain-box px-4 py-3 rounded-md text-sm text-gray-400 text-center">
+        Click a component to understand its role.
+      </div>
+
+    </div>
   </div>
 </section>
 
 <!-- METRICS -->
-<section class="py-16 px-6 text-center">
-  <h2 class="text-3xl font-bold mb-10">Impact</h2>
+<section class="py-16 px-6 max-w-5xl mx-auto fade-up">
+  <h2 class="text-xl font-semibold mb-8">Impact</h2>
 
-  <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-    <div class="glass p-6 rounded-xl glow">
-      <h3 class="text-3xl text-primary font-bold">40%+</h3>
-      <p>Faster APIs</p>
+  <div class="grid md:grid-cols-3 gap-4">
+
+    <div class="card p-6 rounded-lg text-center">
+      <h3 class="text-2xl font-semibold">40%+</h3>
+      <p class="text-gray-400 text-sm mt-1">Latency Reduction</p>
     </div>
 
-    <div class="glass p-6 rounded-xl glow">
-      <h3 class="text-3xl text-primary font-bold">60%+</h3>
-      <p>Automation</p>
+    <div class="card p-6 rounded-lg text-center">
+      <h3 class="text-2xl font-semibold">60%+</h3>
+      <p class="text-gray-400 text-sm mt-1">Automation Achieved</p>
     </div>
 
-    <div class="glass p-6 rounded-xl glow">
-      <h3 class="text-3xl text-primary font-bold">10k+</h3>
-      <p>Requests handled</p>
+    <div class="card p-6 rounded-lg text-center">
+      <h3 class="text-2xl font-semibold">₹10L+</h3>
+      <p class="text-gray-400 text-sm mt-1">Monthly Workflow Value</p>
     </div>
+
   </div>
 </section>
 
-<!-- CTA -->
-<section class="text-center py-20">
-  <h2 class="text-3xl font-bold gradient-text">
-    Let’s Build Something Scalable
-  </h2>
+<!-- SCRIPT -->
+<script>
+  const elements = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('show');
+    });
+  });
+  elements.forEach(el => observer.observe(el));
 
-  <a href="mailto:dhruvrpandey01@gmail.com" 
-     class="mt-6 inline-block bg-primary text-black px-8 py-4 rounded-lg font-semibold hover:scale-110 transition shadow-glow">
-     Hire Me Now
-  </a>
-</section>
+  const nodes = document.querySelectorAll('.node');
+  const explainBox = document.getElementById('explainBox');
 
-<!-- FLOATING BUTTON -->
-<a href="https://wa.me/918169955621" 
-   class="fixed bottom-6 right-6 bg-green-500 px-5 py-3 rounded-full shadow-lg hover:scale-110 transition">
-   💬
-</a>
+  nodes.forEach(node => {
+    node.addEventListener('click', () => {
+      nodes.forEach(n => n.classList.remove('active'));
+      node.classList.add('active');
+      explainBox.textContent = node.getAttribute('data-info');
+    });
+  });
+</script>
 
 </body>
 </html>
