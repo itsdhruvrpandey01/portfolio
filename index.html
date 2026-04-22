@@ -518,6 +518,21 @@ nav.scrolled { background:rgba(245,242,235,.85); backdrop-filter:blur(16px); bor
   transition: color .2s, background .2s;
   white-space: nowrap;
 }
+  .ct-tabs{
+  display:flex;
+  overflow-x:auto;
+  overflow-y:hidden;
+  white-space:nowrap;
+  scrollbar-width:none;
+  -ms-overflow-style:none;
+}
+
+.ct-tabs::-webkit-scrollbar{
+  display:none;
+}
+.ct-tab{
+  flex:0 0 auto;
+}
 .ct-tab.active {
   color: rgba(212,208,200,.85);
   background: #0d1117;
