@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Dhruv Pandey — Software Developer</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
 :root {
@@ -619,7 +618,6 @@ nav.scrolled { background:rgba(245,242,235,.85); backdrop-filter:blur(16px); bor
 
 <!-- ══════════ HERO ══════════ -->
 <section class="min-h-screen flex flex-col justify-end px-8 pb-16 pt-28 relative overflow-hidden">
-  <canvas id="three-canvas" aria-hidden="true"></canvas>
   <div class="hero-number absolute top-0 right-0 leading-none select-none pointer-events-none" id="hero-num" aria-hidden="true">01</div>
 
   <div class="max-w-6xl relative z-10 w-full">
@@ -1317,7 +1315,15 @@ document.querySelectorAll('.section-num').forEach(el => {
 
     /* Pick a good voice */
     const voices = speechSynthesis.getVoices();
-    const preferred = voices.find(v => /Google US English|Samantha|Alex|Daniel/.test(v.name)) || voices[0];
+    const preferred =
+  voices.find(v => v.name.includes("Google UK English Male")) ||
+  voices.find(v => v.name.includes("Google US English")) ||
+  voices.find(v => v.name.includes("Daniel")) ||
+  voices.find(v => v.name.includes("Alex")) ||
+  voices.find(v => v.name.includes("Microsoft David")) ||
+  voices.find(v => v.name.includes("Microsoft Mark")) ||
+  voices.find(v => v.name.includes("Microsoft Ravi")) ||
+  voices[0];
     if (preferred) utterance.voice = preferred;
 
     /* Word highlight sync */
